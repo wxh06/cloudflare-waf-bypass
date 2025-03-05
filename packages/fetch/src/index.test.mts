@@ -34,3 +34,18 @@ describe("codeforces", async () => {
     assert(await isLoginPage(fetch(codeforcesLogin)));
   });
 });
+
+describe("ichack25 tickets", async () => {
+  const url = "https://tickets.ichack.org/";
+
+  it("should work", async (t) => {
+    const { fetch, close } = await newWaf(url);
+    t.after(close);
+
+    assert(
+      await fetch(url)
+        .then((r) => r.text())
+        .then((text) => text.includes("Buy tickets")),
+    );
+  });
+});

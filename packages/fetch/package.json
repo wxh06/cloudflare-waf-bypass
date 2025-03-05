@@ -12,11 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "@cloudflare-waf-bypass/pow": "workspace:*",
-    "puppeteer-real-browser": "^1.4.2",
+    "rebrowser-puppeteer-core": "^23.10.3",
     "undici": "^7.4.0"
   },
   "devDependencies": {
-    "rebrowser-puppeteer-core": "^23.10.3",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   }
