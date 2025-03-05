@@ -1,0 +1,5 @@
+{
+  "trailingComma": "all",
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrderTypeScriptVersion": "5.8.2"
+}

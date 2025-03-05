@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "build:pow": "wasm-pack build --scope cloudflare-waf-bypass --target nodejs --release -d ../../packages/pow crates/pow",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xinhe Wang",
+  "license": "MIT",
+  "packageManager": "pnpm@10.5.2",
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "eslint": "^9.21.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
+  }
+}

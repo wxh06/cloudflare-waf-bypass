@@ -1,0 +1,22 @@
+{
+  "name": "@cloudflare-waf-bypass/fetch",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Xinhe Wang",
+  "license": "MIT",
+  "dependencies": {
+    "@cloudflare-waf-bypass/pow": "workspace:*",
+    "puppeteer-real-browser": "^1.4.2",
+    "undici": "^7.4.0"
+  },
+  "devDependencies": {
+    "rebrowser-puppeteer-core": "^23.10.3",
+    "typescript": "^5.8.2"
+  }
+}
