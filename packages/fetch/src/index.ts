@@ -16,10 +16,12 @@ const clearanceCookie = "cf_clearance";
 export function newWaf(wafUrl: string): Promise<{
   challenge: (url?: string) => Promise<void>;
   fetch: typeof fetch;
+  close: () => Promise<void>;
 }>;
 export function newWaf(wafUrl?: string): Promise<{
   challenge: (url: string) => Promise<void>;
   fetch: typeof fetch;
+  close: () => Promise<void>;
 }>;
 export async function newWaf(wafUrl?: string) {
   const clearances: Record<string, string> = {};
@@ -74,11 +76,12 @@ export async function newWaf(wafUrl?: string) {
             if (cookie.name === "pow") cookie.value = work(pow.value);
             request.headers.append("cookie", `${cookie.name}=${cookie.value}`);
           });
-        console.log(request.headers);
         return fetch(request);
       }
 
       return response;
     },
+
+    close: () => browser.close(),
   };
 }

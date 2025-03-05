@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -p tsconfig.build.json",
+    "test": "tsx --test"
   },
   "keywords": [],
   "author": "Xinhe Wang",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "rebrowser-puppeteer-core": "^23.10.3",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   }
 }
