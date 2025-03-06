@@ -1,8 +1,6 @@
-import { work } from "@cloudflare-waf-bypass/pow";
 import puppeteer, { type Page } from "rebrowser-puppeteer-core";
 import {
   fetch,
-  getSetCookies,
   Request,
   type RequestInfo,
   type RequestInit,
@@ -81,23 +79,7 @@ export async function newWaf(wafUrl?: string) {
       );
       if (clearance)
         request.headers.append("cookie", `${clearanceCookie}=${clearance[1]}`);
-      const response = await fetch(request);
-
-      const pow = getSetCookies(response.headers).find(
-        ({ name }) => name === "pow",
-      );
-      if (pow) {
-        const setCookies = getSetCookies(response.headers);
-        setCookies
-          .filter(({ domain }) => !domain || matchDomain(url.hostname, domain))
-          .forEach((cookie) => {
-            if (cookie.name === "pow") cookie.value = work(pow.value);
-            request.headers.append("cookie", `${cookie.name}=${cookie.value}`);
-          });
-        return fetch(request);
-      }
-
-      return response;
+      return fetch(request);
     },
 
     close: () => browser.close(),

@@ -29,9 +29,6 @@ importers:
 
   packages/fetch:
     dependencies:
-      '@cloudflare-waf-bypass/pow':
-        specifier: workspace:*
-        version: link:../pow
       rebrowser-puppeteer-core:
         specifier: ^23.10.3
         version: 23.10.3
@@ -45,8 +42,6 @@ importers:
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
-
-  packages/pow: {}
 
 packages:
 

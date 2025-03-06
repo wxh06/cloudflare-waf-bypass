@@ -1,7 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "build:pow": "wasm-pack build --scope cloudflare-waf-bypass --target nodejs --release -d ../../packages/pow crates/pow",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Xinhe Wang",

@@ -11,7 +11,6 @@
   "author": "Xinhe Wang",
   "license": "MIT",
   "dependencies": {
-    "@cloudflare-waf-bypass/pow": "workspace:*",
     "rebrowser-puppeteer-core": "^23.10.3",
     "undici": "^7.4.0"
   },

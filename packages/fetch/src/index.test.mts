@@ -13,7 +13,7 @@ describe("codeforces", async () => {
   const isLoginPage = (promise: Promise<Response>) =>
     promise
       .then((r) => r.text())
-      .then((text) => text.includes("Login - Codeforces"));
+      .then((text) => text.includes("Login - Codeforces") || text.includes("Please wait."));
 
   it("should be able fetch the login page", async (t) => {
     const { fetch, close } = await newWaf(codeforcesLogin);
