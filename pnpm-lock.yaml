@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      rebrowser-puppeteer-core:
+        specifier: ^23.10.3
+        version: 23.10.3
+      undici:
+        specifier: ^7.4.0
+        version: 7.4.0
     devDependencies:
       '@eslint/js':
         specifier: ^9.21.0
@@ -20,28 +27,15 @@ importers:
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
-      typescript-eslint:
-        specifier: ^8.26.0
-        version: 8.26.0(eslint@9.21.0)(typescript@5.8.2)
-
-  packages/fetch:
-    dependencies:
-      rebrowser-puppeteer-core:
-        specifier: ^23.10.3
-        version: 23.10.3
-      undici:
-        specifier: ^7.4.0
-        version: 7.4.0
-    devDependencies:
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
+      typescript-eslint:
+        specifier: ^8.26.0
+        version: 8.26.0(eslint@9.21.0)(typescript@5.8.2)
 
 packages:
 

@@ -1,24 +1,24 @@
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config(
+/** @type {import("eslint").Linter.Config} */
+const config = [
   { ignores: ["**/dist/"] },
   eslint.configs.recommended,
-  tseslint.configs.strict,
+  ...tseslint.configs.strictTypeChecked,
+  ...tseslint.configs.stylisticTypeChecked,
   {
-    files: ["**/*.ts"],
-    extends: [
-      tseslint.configs.strictTypeChecked,
-      tseslint.configs.stylisticTypeChecked,
-    ],
     languageOptions: {
       parserOptions: {
-        projectService: ["packages/*/tsconfig.json"],
+        projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
     },
+  },
+  {
     rules: {
       "@typescript-eslint/consistent-type-imports": "error",
     },
   },
-);
+];
+export default config;

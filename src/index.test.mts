@@ -7,7 +7,7 @@ const { newWaf } = index;
 
 const cloudflareUrl = "https://www.cloudflare.com/";
 
-describe("codeforces", async () => {
+await describe("codeforces", async () => {
   const codeforcesLogin = "https://codeforces.com/enter";
 
   const isLoginPage = (promise: Promise<Response>) =>
@@ -15,7 +15,7 @@ describe("codeforces", async () => {
       .then((r) => r.text())
       .then((text) => text.includes("Login - Codeforces") || text.includes("Please wait."));
 
-  it("should be able fetch the login page", async (t) => {
+  await it("should be able fetch the login page", async (t) => {
     const { fetch, close } = await newWaf(codeforcesLogin);
     t.after(close);
 
@@ -23,7 +23,7 @@ describe("codeforces", async () => {
     assert(await isLoginPage(fetch(codeforcesLogin)));
   });
 
-  it("should work after multiple challenges", async (t) => {
+  await it("should work after multiple challenges", async (t) => {
     const { challenge, fetch, close } = await newWaf(cloudflareUrl);
     t.after(close);
     await challenge(codeforcesLogin);
@@ -35,10 +35,10 @@ describe("codeforces", async () => {
   });
 });
 
-describe("ichack25 tickets", async () => {
+await describe("ichack25 tickets", async () => {
   const url = "https://tickets.ichack.org/";
 
-  it("should work", async (t) => {
+  await it("should work", async (t) => {
     const { fetch, close } = await newWaf(url);
     t.after(close);
 
